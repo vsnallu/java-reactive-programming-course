@@ -8,10 +8,10 @@ public class Lec02MonoJust {
 
         // publisher
         Mono<Integer> mono = Mono.just(1);
-
         System.out.println(mono);
-
-        mono.subscribe(i -> System.out.println("Received : " + i));
+        // Nothing happens until you subscribe in reactive programming.
+        // Here we are passing a consumer (lambda expression) to the subscribe method and asking publisher to emit the data
+        mono.subscribe(i -> System.out.println("Received : " + i)); // Here onNext method of subscriber will be called
 
     }
 

@@ -11,7 +11,7 @@ public class Lec08MonoFromRunnable {
         Mono.fromRunnable(timeConsumingProcess())
                 .subscribe(Util.onNext(),
                         Util.onError(),
-                        () -> {
+                        () -> { // This is another runnable which gets executed after the first Runnable from timeConsumingProcess
                             System.out.println("process is done. Sending emails...");
                         });
 

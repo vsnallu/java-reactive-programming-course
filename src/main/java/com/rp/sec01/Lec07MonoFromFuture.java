@@ -15,8 +15,9 @@ public class Lec07MonoFromFuture {
         Util.sleepSeconds(1);
 
     }
-
-    private static CompletableFuture<String> getName(){
+    // CompletableFuture: A Future that may be explicitly completed (setting its value and status),
+    // and mya be used as a CompletionStage, supporting dependent functions and actions that trigger upon its completion
+    private static CompletableFuture<String> getName(){ // CompletableFuture is Java equivalent of Javascript Future
         return CompletableFuture.supplyAsync(() -> Util.faker().name().fullName());
     }
 
